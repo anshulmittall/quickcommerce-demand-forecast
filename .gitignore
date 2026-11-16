@@ -1,0 +1,11 @@
+# Python environment and caches
+.venv/
+__pycache__/
+*.pyc
+
+# M5 data: download it from Kaggle (see README), it is not redistributed here
+data/
+
+# Local-only files
+.DS_Store
+api key.png

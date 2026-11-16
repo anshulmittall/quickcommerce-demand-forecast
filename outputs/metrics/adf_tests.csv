@@ -1,0 +1,4 @@
+series,adf_statistic,p_value,stationary_at_5%
+Original series,-2.659,0.0814,no
+First difference (today - yesterday),-14.909,0.0,yes
+Seasonal difference (today - same day last week),-17.299,0.0,yes

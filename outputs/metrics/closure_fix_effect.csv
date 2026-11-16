@@ -1,0 +1,4 @@
+rule,MAE_year_raw,MAE_year_with_fix,MAE_christmas_weeks_raw,MAE_christmas_weeks_with_fix
+Naive (repeat last day),921.7,913.1,592.0,366.5
+Seasonal naive (same day last week),316.9,305.0,766.2,457.5
+7-day moving average,497.8,491.5,418.3,256.3

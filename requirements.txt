@@ -1,0 +1,11 @@
+# Tested with Python 3.13. Versions in the comments are the ones the
+# results in README.md were produced with.
+
+pandas<3          # 2.3.3  - scripts are written for pandas 2.x
+numpy<2.5         # 2.4.6  - numpy 2.5 raises a DeprecationWarning inside pandas 2.x date arithmetic
+matplotlib        # 3.11.2
+statsmodels       # 0.15.0 - ADF test, ACF/PACF, Holt-Winters, ARIMA, SARIMA
+scikit-learn      # 1.9.1  - needed by XGBoost's XGBRegressor
+xgboost           # 3.4.1
+prophet           # 1.5.0
+tensorflow        # 2.21.0 - provides Keras for the LSTM
