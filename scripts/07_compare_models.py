@@ -91,6 +91,7 @@ for name, (label, group) in MODELS.items():
         "group": group,
         "MAE": round(s["MAE"], 1),
         "RMSE": round(s["RMSE"], 1),
+        "MAPE_%": round(s["MAPE_%"], 2),
         "WAPE_%": round(s["WAPE_%"], 2),
         # How much lower the error is than the existing rules (positive = better).
         "error_cut_vs_moving_avg_%": round(100 * (1 - s["WAPE_%"] / reference_wape), 1),

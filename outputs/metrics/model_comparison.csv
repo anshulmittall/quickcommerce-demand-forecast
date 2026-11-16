@@ -1,13 +1,13 @@
-model,group,MAE,RMSE,WAPE_%,error_cut_vs_moving_avg_%,error_cut_vs_seasonal_naive_%,weeks_better_than_moving_avg,units_under_forecast,units_over_forecast
-XGBoost,ML / DL,194.5,254.7,6.72,60.4,36.2,50,29660,41147
-VARIMAX (3 categories + calendar flags),Classical,217.1,291.3,7.5,55.8,28.8,49,39607,39431
-SARIMAX (SARIMA + calendar flags),Classical,221.1,299.2,7.64,55.0,27.5,48,40792,39706
-LSTM,ML / DL,235.8,318.2,8.15,52.0,22.7,48,39837,46005
-Prophet,ML / DL,244.6,323.5,8.45,50.2,19.8,49,46173,42878
-SARIMA,Classical,254.3,334.2,8.79,48.3,16.6,49,46773,45781
-Holt-Winters,Classical,267.4,350.5,9.24,45.6,12.3,47,50967,46355
-Seasonal naive (same day last week),Existing practice,305.0,392.9,10.54,38.0,0.0,44,55872,55145
-ARIMAX (ARIMA + calendar flags),Classical,311.5,394.3,10.76,36.6,-2.1,47,53646,59729
-ARIMA (no seasonality),Classical,347.6,435.9,12.01,29.3,-14.0,43,36248,90262
-7-day moving average,Existing practice,491.5,594.7,16.98,0.0,-61.2,0,89927,88990
-Naive (repeat last day),Existing practice,913.1,1061.6,31.55,-85.8,-199.4,2,16167,316184
+model,group,MAE,RMSE,MAPE_%,WAPE_%,error_cut_vs_moving_avg_%,error_cut_vs_seasonal_naive_%,weeks_better_than_moving_avg,units_under_forecast,units_over_forecast
+XGBoost,ML / DL,194.5,254.7,6.88,6.72,60.4,36.2,50,29660,41147
+VARIMAX (3 categories + calendar flags),Classical,217.1,291.3,7.67,7.5,55.8,28.8,49,39607,39431
+SARIMAX (SARIMA + calendar flags),Classical,221.1,299.2,7.84,7.64,55.0,27.5,48,40792,39706
+LSTM,ML / DL,235.8,318.2,8.37,8.15,52.0,22.7,48,39837,46005
+Prophet,ML / DL,244.6,323.5,8.54,8.45,50.2,19.8,49,46173,42878
+SARIMA,Classical,254.3,334.2,9.02,8.79,48.3,16.6,49,46773,45781
+Holt-Winters,Classical,267.4,350.5,9.62,9.24,45.6,12.3,47,50967,46355
+Seasonal naive (same day last week),Existing practice,305.0,392.9,10.7,10.54,38.0,0.0,44,55872,55145
+ARIMAX (ARIMA + calendar flags),Classical,311.5,394.3,11.04,10.76,36.6,-2.1,47,53646,59729
+ARIMA (no seasonality),Classical,347.6,435.9,12.64,12.01,29.3,-14.0,43,36248,90262
+7-day moving average,Existing practice,491.5,594.7,17.08,16.98,0.0,-61.2,0,89927,88990
+Naive (repeat last day),Existing practice,913.1,1061.6,35.67,31.55,-85.8,-199.4,2,16167,316184

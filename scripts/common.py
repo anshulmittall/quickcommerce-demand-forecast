@@ -129,17 +129,22 @@ def walk_forward(series, forecast_fn, closure_aware=True):
 
 
 def score(actual, predicted):
-    """Three error measures, all 'lower is better'.
+    """Four error measures, all 'lower is better'.
 
     MAE  = average size of the miss, in units.
     RMSE = like MAE but punishes big misses more.
-    WAPE = total miss as a % of total sales. Used instead of MAPE because
-           MAPE divides by each day's sales and 25 December has 0 sales.
+    MAPE = average miss as a % of that day's sales. It divides by each
+           day's sales, so a day with 0 sales (25 December, store closed)
+           cannot be included and is left out.
+    WAPE = total miss as a % of total sales. It divides only once, by the
+           total, so it also works with the zero-sales day.
     """
     error = actual - predicted
+    open_days = actual > 0      # MAPE cannot divide by zero
     return {
         "MAE": np.mean(np.abs(error)),
         "RMSE": np.sqrt(np.mean(error ** 2)),
+        "MAPE_%": 100 * np.mean(np.abs(error[open_days]) / actual[open_days]),
         "WAPE_%": 100 * np.sum(np.abs(error)) / np.sum(actual),
     }
 
@@ -162,7 +167,7 @@ def report(name, actual, predicted, seconds):
     """Print one line of results for a model."""
     s = score(actual, predicted)
     print(f"{name:<28} MAE={s['MAE']:7.1f}  RMSE={s['RMSE']:7.1f}  "
-          f"WAPE={s['WAPE_%']:5.2f}%   ({seconds:.1f} s)")
+          f"MAPE={s['MAPE_%']:5.2f}%  WAPE={s['WAPE_%']:5.2f}%   ({seconds:.1f} s)")
 
 
 def use_project_style():
